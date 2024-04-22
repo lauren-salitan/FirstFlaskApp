@@ -1,0 +1,57 @@
+Last login: Fri Apr 12 22:01:27 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ python3 -m venv venv
+Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ source venv/bin/activate
+(venv) Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ pip install flask
+Requirement already satisfied: flask in ./venv/lib/python3.12/site-packages (3.0.3)
+Requirement already satisfied: Werkzeug>=3.0.0 in ./venv/lib/python3.12/site-packages (from flask) (3.0.2)
+Requirement already satisfied: Jinja2>=3.1.2 in ./venv/lib/python3.12/site-packages (from flask) (3.1.3)
+Requirement already satisfied: itsdangerous>=2.1.2 in ./venv/lib/python3.12/site-packages (from flask) (2.1.2)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.12/site-packages (from flask) (8.1.7)
+Requirement already satisfied: blinker>=1.6.2 in ./venv/lib/python3.12/site-packages (from flask) (1.7.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.12/site-packages (from Jinja2>=3.1.2->flask) (2.1.5)
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+(venv) Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ pip install psycopg2-binary
+Requirement already satisfied: psycopg2-binary in ./venv/lib/python3.12/site-packages (2.9.9)
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+(venv) Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ pip install flask-sqlalchemy
+Requirement already satisfied: flask-sqlalchemy in ./venv/lib/python3.12/site-packages (3.1.1)
+Requirement already satisfied: flask>=2.2.5 in ./venv/lib/python3.12/site-packages (from flask-sqlalchemy) (3.0.3)
+Requirement already satisfied: sqlalchemy>=2.0.16 in ./venv/lib/python3.12/site-packages (from flask-sqlalchemy) (2.0.29)
+Requirement already satisfied: Werkzeug>=3.0.0 in ./venv/lib/python3.12/site-packages (from flask>=2.2.5->flask-sqlalchemy) (3.0.2)
+Requirement already satisfied: Jinja2>=3.1.2 in ./venv/lib/python3.12/site-packages (from flask>=2.2.5->flask-sqlalchemy) (3.1.3)
+Requirement already satisfied: itsdangerous>=2.1.2 in ./venv/lib/python3.12/site-packages (from flask>=2.2.5->flask-sqlalchemy) (2.1.2)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.12/site-packages (from flask>=2.2.5->flask-sqlalchemy) (8.1.7)
+Requirement already satisfied: blinker>=1.6.2 in ./venv/lib/python3.12/site-packages (from flask>=2.2.5->flask-sqlalchemy) (1.7.0)
+Requirement already satisfied: typing-extensions>=4.6.0 in ./venv/lib/python3.12/site-packages (from sqlalchemy>=2.0.16->flask-sqlalchemy) (4.11.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.12/site-packages (from Jinja2>=3.1.2->flask>=2.2.5->flask-sqlalchemy) (2.1.5)
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+(venv) Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ pip freeze > requirements.txt
+(venv) Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ 
+
+
+
+Last login: Mon Apr 15 11:28:43 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ psql < movies.sql
+psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  Postgres.app failed to verify "trust" authentication
+DETAIL:  The helper application terminated with signal 6. For more information see https://postgresapp.com/l/app-permissions/
+HINT:  You may be able to connect by editing app permission in Postgres.app settings. Please report this error to https://github.com/PostgresApp/PostgresApp/issues
+Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ psql -d movies_example -U laurensltn
+psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  Postgres.app failed to verify "trust" authentication
+DETAIL:  The helper application terminated with signal 6. For more information see https://postgresapp.com/l/app-permissions/
+HINT:  You may be able to connect by editing app permission in Postgres.app settings. Please report this error to https://github.com/PostgresApp/PostgresApp/issues
+Laurens-MacBook-Air:FirstFlaskApp laurensalitan$ 
+
