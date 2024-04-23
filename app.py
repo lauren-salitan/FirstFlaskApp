@@ -68,11 +68,19 @@ def list_pets():
 #     return f"<h1>{{pet.name}}</h1>"
 #     # return f"<h1>(pet.name)</h1>"
 
- #solution #6
+#  #solution #6
+# @app.route('/<int:pet_id>')
+# def show_pet(pet_id):
+#     """show details"""
+#     return f"<h1>{db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar().name}</h1>"
+#     # return f"<h1>(pet.name)</h1>" 
+
+ #solution #7
 @app.route('/<int:pet_id>')
 def show_pet(pet_id):
     """show details"""
-    return f"<h1>{db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar().name}</h1>"
+    pet = db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar()
+    return f"<h1>{pet.name}</h1>"
     # return f"<h1>(pet.name)</h1>"   
 
 ###Video later on:
