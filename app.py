@@ -26,7 +26,7 @@
 # # AFTER:
 from flask import Flask, request, render_template,  redirect, flash, session
 from flask_debugtoolbar import DebugToolbarExtension
-from models import db, connect_db, Pet #, get_pet_by_id
+from models import db, connect_db, Pet#, get_pet_by_id
 
 app = Flask(__name__)
 
@@ -46,11 +46,11 @@ def list_pets():
     return render_template('list.html', pets=pets)
 
 #video:
-@app.route('</int:pet_id>')
+@app.route('/<int:pet_id>')
 def show_pet(pet_id):
     """show details"""
     pet = Pet.query.get(pet_id)
-    return f"<h1>(pet.name)</h1>"
+    return f"<h1>{{pet.name}}</h1>"
 
 ###Video later on:
 # @app.route('/', methods=["POST"])

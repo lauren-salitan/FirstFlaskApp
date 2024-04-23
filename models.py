@@ -11,6 +11,8 @@ def connect_db(app):
 #     """Get a pet by ID using a session."""
 #     return db.session.get(Pet, id)
 
+
+
 # models go below
 
 class Pet(db.Model):
@@ -25,13 +27,18 @@ class Pet(db.Model):
     def get_all_hungry(cls):
         return cls.query.filter(Pet.hunger >20).all()
 
-    # 
+    @classmethod
+    def get_pet_by_id(id):
+        """Get a pet by ID using a session."""
+        return db.session.execute(db.select(Pet).filter_by(id=id)).scalar()
+ 
     def __repr__(self):
         p=self
         return f"<Pet id={p.id} name={p.name} species={p.species} hunger={p.hunger}"
     # def __repr__(self):
     #     return f"<Pet id={self.id} name={self.name} species={self.species} hunger={self.hunger}>"
 
+    
 
     id = db.Column(db.Integer,
                    primary_key=True,
