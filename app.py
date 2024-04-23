@@ -46,11 +46,34 @@ def list_pets():
     return render_template('list.html', pets=pets)
 
 #video:
+# @app.route('/<int:pet_id>')
+# def show_pet(pet_id):
+#     """show details"""
+#     pet = Pet.query.get(pet_id)
+#     return f"<h1>{{pet.name}}</h1>"
+
+#solution attempt 4:
+# @app.route('/<int:pet_id>')
+# def show_pet(pet_id):
+#     """show details"""
+#     pet = get_pet_by_id(id)
+#     return f"<h1>{{pet.name}}</h1>"
+# #     # return f"<h1>(pet.name)</h1>"
+
+#solution #5
+# @app.route('/<int:pet_id>')
+# def show_pet(pet_id):
+#     """show details"""
+#     pet = db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar()
+#     return f"<h1>{{pet.name}}</h1>"
+#     # return f"<h1>(pet.name)</h1>"
+
+ #solution #6
 @app.route('/<int:pet_id>')
 def show_pet(pet_id):
     """show details"""
-    pet = Pet.query.get(pet_id)
-    return f"<h1>{{pet.name}}</h1>"
+    return f"<h1>{db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar().name}</h1>"
+    # return f"<h1>(pet.name)</h1>"   
 
 ###Video later on:
 # @app.route('/', methods=["POST"])

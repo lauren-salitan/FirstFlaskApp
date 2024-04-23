@@ -28,9 +28,9 @@ class Pet(db.Model):
         return cls.query.filter(Pet.hunger >20).all()
 
     @classmethod
-    def get_pet_by_id(id):
+    def get_pet_by_id(pet_id):
         """Get a pet by ID using a session."""
-        return db.session.execute(db.select(Pet).filter_by(id=id)).scalar()
+        return db.session.execute(db.select(Pet).filter_by(id=pet_id)).scalar()
  
     def __repr__(self):
         p=self
